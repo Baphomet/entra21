@@ -1,15 +1,15 @@
 programa {
   funcao inicio() {
-    cadeia vogais[] = {"A","E","I","O","U"}
-    cadeia letraDigitada
-    escreva("Informe uma letra:")
-    leia(letraDigitada)
-    se (letraDigitada != vogais){
-      escreva("A letra digitada é uma consoante")
-    } senao se(letraDigitada == vogais){
-      escreva("A letra digitada é uma vogal")
-    } senao {
-      escreva("Informe um valor válido")
+    cadeia letra
+    escreva("Digite uma letra: ")
+    leia(letra)
+    se (letra == "A" ou letra == "E" ou letra == "I" ou letra == "O" ou letra == "U"){
+      escreva("Vogal")
+    } senao se (letra != "A" ou letra != "E" ou letra != "I" ou letra != "O" ou letra != "U"){
+      escreva("Consoante")
+    } senao{
+      escreva("Entrada inválida")
     }
+
   }
 }
