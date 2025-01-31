@@ -18,6 +18,8 @@ programa {
       escreva("Sexta-Feira")
     } senao se(dia == 7) {
       escreva("Sábado")
-    } 
+    } senao {
+      escreva("Entrada inválida!")
+    }
   }
 }
