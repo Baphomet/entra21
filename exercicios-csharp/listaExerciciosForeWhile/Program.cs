@@ -12,7 +12,8 @@ namespace listaExerciciosForeWhile
     {
         static void Main(string[] args)
         {
-            Ex03();
+            Ex04();
+            Console.ReadKey();
         }
         static void Ex01()
         {
@@ -77,6 +78,20 @@ namespace listaExerciciosForeWhile
                 Console.WriteLine("Entrada Inválida! Use apenas: S C V ou D");
                 estadoCivil = Console.ReadLine();
             }
+        }
+        static void Ex04()
+        {
+            double paisA = 80000;
+            double paisB = 200000;
+            int ano = 0;
+
+            while(paisA < paisB)
+            {
+                paisA += paisA * 0.03;
+                paisB += paisB * 0.015;
+                ano += 1;
+            }
+            Console.WriteLine($"Vai demorar um total de {ano} anos para o país A passar o país B em população!");
         }
 
     }
