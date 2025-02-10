@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Diagnostics.Eventing.Reader;
 using System.Globalization;
 using System.IO.Pipes;
 using System.Linq;
@@ -14,7 +15,8 @@ namespace listaExerciciosForeWhile
     {
         static void Main(string[] args)
         {
-            Ex25();
+            Ex26();
+            Console.ReadKey();
         }
         static void Ex01()
         {
@@ -121,7 +123,7 @@ namespace listaExerciciosForeWhile
             Console.WriteLine("Informe o número de pessoas para verificar idade:");
             int pessoas = Convert.ToInt32(Console.ReadLine());
             int[] idade = new int[pessoas];
-      
+
 
             for (int i = 0; i < idade.Length; i++)
             {
@@ -132,7 +134,8 @@ namespace listaExerciciosForeWhile
             if (soma >= 0 && soma <= 25)
             {
                 Console.WriteLine("Turma Jovem");
-            } else if(soma > 25 && soma < 60)
+            }
+            else if (soma > 25 && soma < 60)
             {
                 Console.WriteLine("Turma Adulta");
             }
@@ -142,86 +145,119 @@ namespace listaExerciciosForeWhile
             }
             Console.WriteLine($"Média de idade da turma: {soma}");
         }
-
-
-
-
-
-
-
-
-
-
-
-        static void ExVetor01()
+        static void Ex26()
         {
-            string[] animais = new string[4];
-            for (int i = 0; i < animais.Length; i++)
-            {
-                Console.WriteLine($"Informe o animal {i + 1}");
-                animais[i] = Console.ReadLine();
+            Console.WriteLine("Informe o número de eleitores: ");
+            int nEleitores = Convert.ToInt32(Console.ReadLine());
+            int[] votos = new int[3];  // 3 posições: votos[0] para Candidato 1, votos[1] para Candidato 2, votos[2] para Candidato 3
 
-            }
-            for (int i = 0; i < animais.Length; i++)
+            for (int i = 0; i < nEleitores; i++)
             {
-                Console.Write($"{animais[i]} ");
+                Console.WriteLine("Informe seu voto:\n1- Candidato 1\n2- Candidato 2\n3- Candidato 3");
+                int voto = Convert.ToInt32(Console.ReadLine());
+
+                if (voto >= 1 && voto <= 3)
+                {
+                    votos[voto - 1]++;  // Ajuste para índices de 0 a 2
+                }
+                else
+                {
+                    Console.WriteLine("Entrada Inválida!");
+                }
             }
 
-        }
-        static void ExVetor02()
-        {
-            Console.WriteLine("Informe quantos produtos você deseja cadastrar");
-            int numeroProdutos = Convert.ToInt32(Console.ReadLine());
-            string[] produtos = new string[numeroProdutos];
-            for (int i = 0; i < produtos.Length; i++)
+            Console.WriteLine("Resultado da eleição:");
+            for (int i = 0; i < votos.Length; i++)
             {
-                Console.WriteLine($"Informe o produto {i + 1}");
-                produtos[i] = Console.ReadLine();
-            }
-            Console.WriteLine("---------*---------");
-            for (int i = 0; i < produtos.Length; i++)
-            {
-                Console.WriteLine($"* Produto {i + 1}: {produtos[i]}");
-            }
-            Console.WriteLine("---------*---------");
-        }
-        static void ExVetor03()
-        {
-            Console.WriteLine("Informe o nome da banda que vôcê deseja cadastrar músicas:");
-            string banda = Console.ReadLine();
-            Console.WriteLine("Informe quantas músicas você deseja cadastrar");
-            int listaMusicas = Convert.ToInt32(Console.ReadLine());
-            string[] musicas = new string[listaMusicas];
-            for (int i = 0; i < musicas.Length; i++)
-            {
-                Console.WriteLine($"Informe a música {i + 1}: ");
-                musicas[i] = Console.ReadLine();
-            }
-            for (int i = 0; i < musicas.Length; i++)
-            {
-                Console.WriteLine($"Banda: {banda} - Música: {musicas[i]}");
+                Console.WriteLine($"Candidato {i + 1}: {votos[i]} votos");
             }
         }
-        static void ExVetor04()
-        {
-            Console.WriteLine("Informe a quantidade de alunos que você deseja cadastrar a altura: ");
-            int listaAltura = Convert.ToInt32(Console.ReadLine());
-            double[] altura = new double[listaAltura];
-            for (int i = 0; i < altura.Length; i++)
-            {
-                Console.WriteLine($"Informe a altura do aluno {i + 1}");
-                altura[i] = Convert.ToDouble(Console.ReadLine());
-            }
-            for (int i = 0; i < altura.Length; i++)
-            {
-                Console.WriteLine($"Altura do aluno {i + 1}: {altura[i]}");
-            }
-            Console.WriteLine("Informe o número do aluno que você deseja alterar a altura:");
-            int indice = Convert.ToInt32(Console.ReadLine());
-            Console.WriteLine("Informe a nova altura: ");
-            altura[indice] = Convert.ToDouble(Console.ReadLine());
-            Console.WriteLine($"Altura do aluno {indice} atualizada!");
 
+
+
+
+
+        }
+
+
+
+
+
+
+
+
+
+
+
+            static void ExVetor01()
+            {
+                string[] animais = new string[4];
+                for (int i = 0; i < animais.Length; i++)
+                {
+                    Console.WriteLine($"Informe o animal {i + 1}");
+                    animais[i] = Console.ReadLine();
+
+                }
+                for (int i = 0; i < animais.Length; i++)
+                {
+                    Console.Write($"{animais[i]} ");
+                }
+
+            }
+            static void ExVetor02()
+            {
+                Console.WriteLine("Informe quantos produtos você deseja cadastrar");
+                int numeroProdutos = Convert.ToInt32(Console.ReadLine());
+                string[] produtos = new string[numeroProdutos];
+                for (int i = 0; i < produtos.Length; i++)
+                {
+                    Console.WriteLine($"Informe o produto {i + 1}");
+                    produtos[i] = Console.ReadLine();
+                }
+                Console.WriteLine("---------*---------");
+                for (int i = 0; i < produtos.Length; i++)
+                {
+                    Console.WriteLine($"* Produto {i + 1}: {produtos[i]}");
+                }
+                Console.WriteLine("---------*---------");
+            }
+            static void ExVetor03()
+            {
+                Console.WriteLine("Informe o nome da banda que vôcê deseja cadastrar músicas:");
+                string banda = Console.ReadLine();
+                Console.WriteLine("Informe quantas músicas você deseja cadastrar");
+                int listaMusicas = Convert.ToInt32(Console.ReadLine());
+                string[] musicas = new string[listaMusicas];
+                for (int i = 0; i < musicas.Length; i++)
+                {
+                    Console.WriteLine($"Informe a música {i + 1}: ");
+                    musicas[i] = Console.ReadLine();
+                }
+                for (int i = 0; i < musicas.Length; i++)
+                {
+                    Console.WriteLine($"Banda: {banda} - Música: {musicas[i]}");
+                }
+            }
+            static void ExVetor04()
+            {
+                Console.WriteLine("Informe a quantidade de alunos que você deseja cadastrar a altura: ");
+                int listaAltura = Convert.ToInt32(Console.ReadLine());
+                double[] altura = new double[listaAltura];
+                for (int i = 0; i < altura.Length; i++)
+                {
+                    Console.WriteLine($"Informe a altura do aluno {i + 1}");
+                    altura[i] = Convert.ToDouble(Console.ReadLine());
+                }
+                for (int i = 0; i < altura.Length; i++)
+                {
+                    Console.WriteLine($"Altura do aluno {i + 1}: {altura[i]}");
+                }
+                Console.WriteLine("Informe o número do aluno que você deseja alterar a altura:");
+                int indice = Convert.ToInt32(Console.ReadLine());
+                Console.WriteLine("Informe a nova altura: ");
+                altura[indice] = Convert.ToDouble(Console.ReadLine());
+                Console.WriteLine($"Altura do aluno {indice} atualizada!");
+
+            }
         }
     }
-}
