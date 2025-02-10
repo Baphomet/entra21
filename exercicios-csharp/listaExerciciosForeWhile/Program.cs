@@ -1,4 +1,4 @@
-﻿using System;
+using System;
 using System.Collections.Generic;
 using System.Diagnostics.Eventing.Reader;
 using System.Globalization;
@@ -172,92 +172,137 @@ namespace listaExerciciosForeWhile
                 Console.WriteLine($"Candidato {i + 1}: {votos[i]} votos");
             }
         }
+        static void Ex27()
+        {
+            Console.WriteLine("Informe a quantidade de turmas: ");
+            int numTurmas = Convert.ToInt32(Console.ReadLine());
+            int[] alunosPorTurma = new int[numTurmas];
+            int totalAlunos = 0;
 
+            for (int i = 0; i < numTurmas; i++)
+            {
+                int alunos;
+                do
+                {
+                    Console.WriteLine($"Informe a quantidade de alunos na turma {i + 1} (máximo 40): ");
+                    alunos = Convert.ToInt32(Console.ReadLine());
+                }
+                while (alunos > 40);
 
+                alunosPorTurma[i] = alunos;
+                totalAlunos += alunos;
+            }
 
+            double mediaAlunos = (double)totalAlunos / numTurmas;
+            Console.WriteLine($"A média de alunos por turma é: {mediaAlunos}");
+        }
+        static void Ex28()
+        {
+            Console.WriteLine("Informe a quantidade de CDs: ");
+            int numCDs = Convert.ToInt32(Console.ReadLine());
+            double[] valorCDs = new double[numCDs];
+            double totalInvestido = 0;
 
+            for (int i = 0; i < numCDs; i++)
+            {
+                Console.WriteLine($"Informe o valor do CD {i + 1}: ");
+                valorCDs[i] = Convert.ToDouble(Console.ReadLine());
+                totalInvestido += valorCDs[i];
+            }
 
+            double mediaInvestida = totalInvestido / numCDs;
+            Console.WriteLine($"O valor total investido é: R$ {totalInvestido}");
+            Console.WriteLine($"O valor médio gasto em cada CD é: R$ {mediaInvestida}");
+        }
+        static void Ex29()
+        {
+    
         }
 
 
 
 
-
-
-
-
-
-
-
-            static void ExVetor01()
+        static void ExVetor01()
+        {
+            string[] animais = new string[4];
+            for (int i = 0; i < animais.Length; i++)
             {
-                string[] animais = new string[4];
-                for (int i = 0; i < animais.Length; i++)
-                {
-                    Console.WriteLine($"Informe o animal {i + 1}");
-                    animais[i] = Console.ReadLine();
-
-                }
-                for (int i = 0; i < animais.Length; i++)
-                {
-                    Console.Write($"{animais[i]} ");
-                }
+                Console.WriteLine($"Informe o animal {i + 1}");
+                animais[i] = Console.ReadLine();
 
             }
-            static void ExVetor02()
+            for (int i = 0; i < animais.Length; i++)
             {
-                Console.WriteLine("Informe quantos produtos você deseja cadastrar");
-                int numeroProdutos = Convert.ToInt32(Console.ReadLine());
-                string[] produtos = new string[numeroProdutos];
-                for (int i = 0; i < produtos.Length; i++)
-                {
-                    Console.WriteLine($"Informe o produto {i + 1}");
-                    produtos[i] = Console.ReadLine();
-                }
-                Console.WriteLine("---------*---------");
-                for (int i = 0; i < produtos.Length; i++)
-                {
-                    Console.WriteLine($"* Produto {i + 1}: {produtos[i]}");
-                }
-                Console.WriteLine("---------*---------");
+                Console.Write($"{animais[i]} ");
             }
-            static void ExVetor03()
-            {
-                Console.WriteLine("Informe o nome da banda que vôcê deseja cadastrar músicas:");
-                string banda = Console.ReadLine();
-                Console.WriteLine("Informe quantas músicas você deseja cadastrar");
-                int listaMusicas = Convert.ToInt32(Console.ReadLine());
-                string[] musicas = new string[listaMusicas];
-                for (int i = 0; i < musicas.Length; i++)
-                {
-                    Console.WriteLine($"Informe a música {i + 1}: ");
-                    musicas[i] = Console.ReadLine();
-                }
-                for (int i = 0; i < musicas.Length; i++)
-                {
-                    Console.WriteLine($"Banda: {banda} - Música: {musicas[i]}");
-                }
-            }
-            static void ExVetor04()
-            {
-                Console.WriteLine("Informe a quantidade de alunos que você deseja cadastrar a altura: ");
-                int listaAltura = Convert.ToInt32(Console.ReadLine());
-                double[] altura = new double[listaAltura];
-                for (int i = 0; i < altura.Length; i++)
-                {
-                    Console.WriteLine($"Informe a altura do aluno {i + 1}");
-                    altura[i] = Convert.ToDouble(Console.ReadLine());
-                }
-                for (int i = 0; i < altura.Length; i++)
-                {
-                    Console.WriteLine($"Altura do aluno {i + 1}: {altura[i]}");
-                }
-                Console.WriteLine("Informe o número do aluno que você deseja alterar a altura:");
-                int indice = Convert.ToInt32(Console.ReadLine());
-                Console.WriteLine("Informe a nova altura: ");
-                altura[indice] = Convert.ToDouble(Console.ReadLine());
-                Console.WriteLine($"Altura do aluno {indice} atualizada!");
 
+        }
+        static void ExVetor02()
+        {
+            Console.WriteLine("Informe quantos produtos você deseja cadastrar");
+            int numeroProdutos = Convert.ToInt32(Console.ReadLine());
+            string[] produtos = new string[numeroProdutos];
+            for (int i = 0; i < produtos.Length; i++)
+            {
+                Console.WriteLine($"Informe o produto {i + 1}");
+                produtos[i] = Console.ReadLine();
+            }
+            Console.WriteLine("---------*---------");
+            for (int i = 0; i < produtos.Length; i++)
+            {
+                Console.WriteLine($"* Produto {i + 1}: {produtos[i]}");
+            }
+            Console.WriteLine("---------*---------");
+        }
+        static void ExVetor03()
+        {
+            Console.WriteLine("Informe o nome da banda que vôcê deseja cadastrar músicas:");
+            string banda = Console.ReadLine();
+            Console.WriteLine("Informe quantas músicas você deseja cadastrar");
+            int listaMusicas = Convert.ToInt32(Console.ReadLine());
+            string[] musicas = new string[listaMusicas];
+            for (int i = 0; i < musicas.Length; i++)
+            {
+                Console.WriteLine($"Informe a música {i + 1}: ");
+                musicas[i] = Console.ReadLine();
+            }
+            for (int i = 0; i < musicas.Length; i++)
+            {
+                Console.WriteLine($"Banda: {banda} - Música: {musicas[i]}");
             }
         }
+        static void ExVetor04()
+        {
+            Console.WriteLine("Informe a quantidade de alunos que você deseja cadastrar a altura: ");
+            int listaAltura = Convert.ToInt32(Console.ReadLine());
+            double[] altura = new double[listaAltura];
+            for (int i = 0; i < altura.Length; i++)
+            {
+                Console.WriteLine($"Informe a altura do aluno {i + 1}");
+                altura[i] = Convert.ToDouble(Console.ReadLine());
+            }
+            for (int i = 0; i < altura.Length; i++)
+            {
+                Console.WriteLine($"Altura do aluno {i + 1}: {altura[i]}");
+            }
+            Console.WriteLine("Informe o número do aluno que você deseja alterar a altura:");
+            int indice = Convert.ToInt32(Console.ReadLine());
+            Console.WriteLine("Informe a nova altura: ");
+            altura[indice] = Convert.ToDouble(Console.ReadLine());
+            Console.WriteLine($"Altura do aluno {indice} atualizada!");
+
+        }
+
     }
+
+
+
+
+
+
+
+
+
+
+
+}
