@@ -1,4 +1,4 @@
-using System;
+﻿using System;
 using System.Collections.Generic;
 using System.Diagnostics.Eventing.Reader;
 using System.Globalization;
@@ -15,7 +15,7 @@ namespace listaExerciciosForeWhile
     {
         static void Main(string[] args)
         {
-            Ex26();
+            Ex12();
             Console.ReadKey();
         }
         static void Ex01()
@@ -88,16 +88,151 @@ namespace listaExerciciosForeWhile
             double populacaoB = 200000;
             int anos = 0;
 
-            while (popoulacaoA > populacaoB)
+            while (popoulacaoA < populacaoB)
             {
                 popoulacaoA += popoulacaoA * 0.03;
                 populacaoB += populacaoB * 0.015;
                 anos++;
-                Console.WriteLine($"O número de anos necessários para o país A país ");
+
+            }
+            Console.WriteLine($"O número de anos necessários para o país A passar o país B é de: {anos} anos");
+        }
+        static void Ex05()
+        {
+            while (true)
+            {
+                Console.WriteLine("Informe o número da população A: ");
+                double populacaoA = Convert.ToInt32(Console.ReadLine());
+                Console.WriteLine("Informe o número da população B: ");
+                double populacaoB = Convert.ToInt32(Console.ReadLine());
+                Console.WriteLine("Infome a taxa de crescimento da população A: ");
+                double taxaA = Convert.ToDouble(Console.ReadLine());
+                Console.WriteLine("Infome a taxa de crescimento da população A: ");
+                double taxaB = Convert.ToDouble(Console.ReadLine());
+                int anos = 0;
+                while (populacaoA < populacaoB)
+                {
+                    populacaoA += (populacaoA * taxaA) / 100;
+                    populacaoB += (populacaoB * taxaB) / 100;
+                    anos++;
+
+                }
+                Console.WriteLine($"O número de anos necessários para o país A passar o país B é de: {anos} anos");
+            }
+
+        }
+        static void Ex06()
+        {
+            for (int i = 1; i <= 20; i++)
+            {
+                Console.WriteLine(i);
+
+            }
+            for (int i = 1; i <= 20; i++)
+            {
+                Console.Write($"{i} ");
 
             }
         }
-        static void Ex05()
+        static void Ex07()
+        {
+            int[] nums = new int[5];
+            for (int i = 0; i < nums.Length; i++)
+            {
+                Console.WriteLine("Informe um número: ");
+                nums[i] = Convert.ToInt32(Console.ReadLine());
+            }
+            Console.WriteLine($"O maior número digitado foi: {nums.Max()}");
+        }
+        static void Ex08()
+        {
+            int[] nums = new int[5];
+            for (int i = 0; i < nums.Length; i++)
+            {
+                Console.WriteLine("Informe um número: ");
+                nums[i] = Convert.ToInt32(Console.ReadLine());
+                
+            }
+            Console.WriteLine($"A média dos números digitados é: {nums.Average()}");
+        }
+        static void Ex09() {
+
+
+            for (int i = 1; i <= 50; i++)
+            {
+                if (i % 2 == 1)
+                {
+                    Console.WriteLine(i);
+                }
+            }
+        }
+        static void Ex10()
+        {
+            int[] nums = new int[2];
+            Console.WriteLine("Informe o primeiro número: ");
+            nums[0] = Convert.ToInt32(Console.ReadLine());
+            Console.WriteLine("Informe o segundo número: ");
+            nums[1] = Convert.ToInt32(Console.ReadLine());
+
+            if (nums[0] < nums[1])
+            {
+                for (int i = nums[0]; i <= nums[1]; i++)
+                {
+                    Console.WriteLine(i);
+                }
+            } else if (nums[0] > nums[1])
+            {
+                for(int i = nums[0]; i >= nums[1]; i--)
+                {
+                    Console.WriteLine(i);
+                }
+            }
+        } 
+        static void Ex11()
+        {
+            int[] nums = new int[2];
+            Console.WriteLine("Informe o primeiro número: ");
+            nums[0] = Convert.ToInt32(Console.ReadLine());
+            Console.WriteLine("Informe o segundo número: ");
+            nums[1] = Convert.ToInt32(Console.ReadLine());
+
+            int sum = 0;
+            if (nums[0] < nums[1])
+            {
+                for (int i = nums[0]; i <= nums[1]; i++)
+                {
+                    sum += i;
+                }
+                    Console.WriteLine(sum);
+
+            } else if (nums[0] > nums[1])
+            {
+                for(int i = nums[0]; i >= nums[1]; i--)
+                {
+                    sum += i;
+                }
+                    Console.WriteLine(sum);
+            }
+        }
+        static void Ex12()
+        {
+            Console.WriteLine("Informe um número inteiro para exibir a tabuada:");
+            int n = Convert.ToInt32(Console.ReadLine());
+            
+            for(int i = 0; i <= 10; i++)
+            {
+                int mult = n * i;
+                Console.WriteLine($"{n} x {i} = {mult}");
+            }
+        }
+
+        static void Ex13()
+        {
+
+        }
+
+
+        static void Ex24()
         {
             double notas;
             double media;
@@ -117,7 +252,6 @@ namespace listaExerciciosForeWhile
                 }
             }
         }
-
         static void Ex25()
         {
             Console.WriteLine("Informe o número de pessoas para verificar idade:");
@@ -216,7 +350,7 @@ namespace listaExerciciosForeWhile
         }
         static void Ex29()
         {
-    
+
         }
 
 
