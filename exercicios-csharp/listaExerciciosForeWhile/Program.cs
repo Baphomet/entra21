@@ -424,7 +424,6 @@ namespace listaExerciciosForeWhile
             Console.WriteLine("Informe a nova altura: ");
             altura[indice] = Convert.ToDouble(Console.ReadLine());
             Console.WriteLine($"Altura do aluno {indice} atualizada!");
-
         }
 
     }
