@@ -74,6 +74,7 @@ namespace CadastroAnimais
                         break;
 
                     case 5:
+                        Console.WriteLine("** Menor animal **");
                         Console.WriteLine($"Menor animal: {animal.Min()}");
                         Console.ReadKey();
                         Console.ReadLine();
