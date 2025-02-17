@@ -1,4 +1,4 @@
-﻿using System;
+using System;
 using System.Collections.Generic;
 using System.Diagnostics.Eventing.Reader;
 using System.Globalization;
@@ -151,11 +151,12 @@ namespace listaExerciciosForeWhile
             {
                 Console.WriteLine("Informe um número: ");
                 nums[i] = Convert.ToInt32(Console.ReadLine());
-                
+
             }
             Console.WriteLine($"A média dos números digitados é: {nums.Average()}");
         }
-        static void Ex09() {
+        static void Ex09()
+        {
 
 
             for (int i = 1; i <= 50; i++)
@@ -180,14 +181,15 @@ namespace listaExerciciosForeWhile
                 {
                     Console.WriteLine(i);
                 }
-            } else if (nums[0] > nums[1])
+            }
+            else if (nums[0] > nums[1])
             {
-                for(int i = nums[0]; i >= nums[1]; i--)
+                for (int i = nums[0]; i >= nums[1]; i--)
                 {
                     Console.WriteLine(i);
                 }
             }
-        } 
+        }
         static void Ex11()
         {
             int[] nums = new int[2];
@@ -203,23 +205,24 @@ namespace listaExerciciosForeWhile
                 {
                     sum += i;
                 }
-                    Console.WriteLine(sum);
+                Console.WriteLine(sum);
 
-            } else if (nums[0] > nums[1])
+            }
+            else if (nums[0] > nums[1])
             {
-                for(int i = nums[0]; i >= nums[1]; i--)
+                for (int i = nums[0]; i >= nums[1]; i--)
                 {
                     sum += i;
                 }
-                    Console.WriteLine(sum);
+                Console.WriteLine(sum);
             }
         }
         static void Ex12()
         {
             Console.WriteLine("Informe um número inteiro para exibir a tabuada:");
             int n = Convert.ToInt32(Console.ReadLine());
-            
-            for(int i = 0; i <= 10; i++)
+
+            for (int i = 0; i <= 10; i++)
             {
                 int mult = n * i;
                 Console.WriteLine($"{n} x {i} = {mult}");
@@ -430,12 +433,5 @@ namespace listaExerciciosForeWhile
 
 
 
-
-
-
-
-
-
-
-
+    
 }
