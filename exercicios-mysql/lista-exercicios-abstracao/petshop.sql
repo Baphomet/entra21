@@ -14,5 +14,6 @@ CREATE TABLE animal(
 );
 
 CREATE TABLE servico(
+	idServico INT PRIMARY KEY,
 	
 );
