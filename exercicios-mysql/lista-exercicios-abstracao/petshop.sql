@@ -13,6 +13,7 @@ CREATE TABLE animal(
     comportamento VARCHAR(50) NOT NULL
 );
 
+
 CREATE TABLE servico(
 	idServico INT PRIMARY KEY,
 	
