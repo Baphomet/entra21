@@ -6,7 +6,7 @@ CREATE TABLE Equipamento (
     id INT PRIMARY KEY,
     nome VARCHAR(45),
     tipo VARCHAR(45),
-    descricao VARCHAR(45),
+    descricao VARCHAR(100),
     status VARCHAR(45),
     Sala_id INT,
     FOREIGN KEY (Sala_id) REFERENCES Sala(id)
