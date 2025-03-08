@@ -13,7 +13,7 @@ CREATE TABLE Equipamento (
 );
 
 CREATE TABLE Ocorrencia (
-    id INT PRIMARY KEY,
+    id INT PRIMARY KEY UNIQUE,
     nome VARCHAR(45),
     tipo VARCHAR(45),
     descricao VARCHAR(45),
